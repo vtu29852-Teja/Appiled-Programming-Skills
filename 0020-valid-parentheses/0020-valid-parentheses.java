@@ -1,7 +1,7 @@
 import java.util.Stack;
 
-class Solution {
-    public boolean isValid(String s) {
+class Main {
+    public static boolean isValid(String s) {
         // Quick optimization: odd lengths can't be balanced
         if (s.length() % 2 != 0) {
             return false;
@@ -26,5 +26,14 @@ class Solution {
 
         // If stack is empty, all open brackets were properly matched
         return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        // Test cases
+        System.out.println(isValid("()"));       // true
+        System.out.println(isValid("()[]{}"));   // true
+        System.out.println(isValid("(]"));       // false
+        System.out.println(isValid("([)]"));     // false
+        System.out.println(isValid("{[]}"));     // true
     }
 }
